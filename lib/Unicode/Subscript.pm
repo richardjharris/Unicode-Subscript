@@ -16,7 +16,7 @@ BEGIN {
 my $TM = '™';
 my $SM = '℠';
 
-=method unicode_subscript ($text)
+=function unicode_subscript ($text)
 
 Return the subscripted version of C<$text>, in UTF-8 encoding. The following
 characters has subscripted forms in Unicode:
@@ -47,7 +47,7 @@ sub subscript {
     return $text;
 }
 
-=method unicode_superscript ($text)
+=function unicode_superscript ($text)
 
 Return the superscripted version of C<$text>, in UTF-8 encoding. The following
 characters have superscripted forms in Unicode:
@@ -83,7 +83,7 @@ sub superscript {
     return $text;
 }
 
-=method TM
+=function TM
 
 Returns the Unicode (TM) superscript character.
 
@@ -93,7 +93,7 @@ sub TM {
     return $TM;
 }
 
-=method SM
+=function SM
 
 Returns the Unicode (SM) superscript character.
 
@@ -107,19 +107,19 @@ sub SM {
 
 __END__
 
-=encoding utf8
-
 =head1 SYNOPSIS
 
  use Unicode::Subscript qw(subscript superscript);
 
- say 'H' . subscript(2) . 'O';  # H2O
- say 'This algorithm is O(n' . superscript(3) . ')';
+ say 'H' . subscript(2) . 'O';  # H₂O
+ say 'This algorithm is O(n' . superscript(3) . ')';  # O(n³)
 
- say superscript('this text is really high!');
+ say superscript('this text is really high!');  # ᵗʰⁱˢ ᵗᵉˣᵗ ⁱˢ ʳᵉᵃˡˡʸ ʰⁱᵍʰ!
 
  use Unicode::Subscript qw(SM TM);
- say 'Eat at Subway' . TM();
+ say 'Eat at Subway' . TM();   # Eat at Subway™
+
+ use Unicode::Subscript ':all';   # import everything
 
 =head1 DESCRIPTION
 
