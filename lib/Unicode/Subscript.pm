@@ -16,7 +16,7 @@ BEGIN {
 my $TM = '™';
 my $SM = '℠';
 
-=function unicode_subscript ($text)
+=function subscript ($text)
 
 Return the subscripted version of C<$text>, in UTF-8 encoding. The following
 characters has subscripted forms in Unicode:
@@ -47,7 +47,7 @@ sub subscript {
     return $text;
 }
 
-=function unicode_superscript ($text)
+=function superscript ($text)
 
 Return the superscripted version of C<$text>, in UTF-8 encoding. The following
 characters have superscripted forms in Unicode:
